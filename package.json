@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "start": "node ./out/index.js",
+    "watch": "tsc --watch & nodemon ./out/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +22,19 @@
   "homepage": "https://github.com/bromix/typescript-jest-example#readme",
   "devDependencies": {
     "@types/jest": "^26.0.24",
+    "@types/lodash": "^4.17.7",
     "jest": "^26.6.3",
+    "nodemon": "^3.1.4",
     "ts-jest": "^26.5.6",
-    "typescript": "^4.3.5"
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@types/big.js": "^6.2.2",
+    "axios": "^1.7.2",
+    "big.js": "^6.2.1",
+    "dayjs": "^1.11.11",
+    "financejs": "^4.1.0",
+    "lodash": "^4.17.21",
+    "snaptrade-typescript-sdk": "^9.0.30"
   }
 }

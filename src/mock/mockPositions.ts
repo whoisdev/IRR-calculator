@@ -1,0 +1,116 @@
+const mockPositions = [
+  {
+    symbol: {
+      symbol: {
+        id: "7cc49f03-3901-43f6-8d00-11018209d4a7",
+        symbol: "SCHD",
+        description: "Schwab Strategic Trust - Schwab US Dividend Equity ETF",
+        currency: {
+          code: "USD",
+          name: "US Dollar",
+          id: "57f81c53-bdda-45a7-a51f-032afd1ae41b",
+        },
+        exchange: {
+          id: "9f3ea556-15c5-4321-8983-ad4033ff802b",
+          code: "ARCA",
+          mic_code: "ARCX",
+          name: "NYSE Arca",
+          suffix: null,
+          timezone: "America/New_York",
+          start_time: "09:30:00",
+          close_time: "16:00:00",
+        },
+        currencies: [],
+        type: {
+          id: "8057ceb7-e073-4c77-8635-a1c9bc6442cb",
+          code: "et",
+          description: "ETF",
+          is_supported: true,
+        },
+        raw_symbol: "SCHD",
+        logo_url:
+          "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/SCHD.png",
+        figi_code: "BBG0025RWL17",
+        figi_instrument: {
+          figi_code: "BBG0025RWL17",
+          figi_share_class: "BBG0025RWLM4",
+        },
+      },
+      id: "6b19d137-5be8-4f78-ab25-28e5a6e653d6",
+      description: "",
+      local_id: "",
+      security_type: {},
+      listing_exchange: {},
+      is_quotable: true,
+      is_tradable: true,
+    },
+    price: 81.26,
+    open_pnl: 3.15,
+    fractional_units: null,
+    currency: {
+      code: "USD",
+      name: "US Dollar",
+      id: "57f81c53-bdda-45a7-a51f-032afd1ae41b",
+    },
+    units: 1,
+    average_purchase_price: 78.1099,
+  },
+  {
+    symbol: {
+      symbol: {
+        id: "871612b0-a5ec-4361-820f-f3407b8ee86f",
+        symbol: "O",
+        description: "Realty Income Corp.",
+        currency: {
+          code: "USD",
+          name: "US Dollar",
+          id: "57f81c53-bdda-45a7-a51f-032afd1ae41b",
+        },
+        exchange: {
+          id: "ebd63029-461e-4bed-bd4a-d0595f880b52",
+          code: "NYSE",
+          mic_code: "XNYS",
+          name: "New York Stock Exchange",
+          suffix: null,
+          timezone: "America/New_York",
+          start_time: "09:30:00",
+          close_time: "16:00:00",
+        },
+        currencies: [],
+        type: {
+          id: "515c27d1-8471-4dec-a234-af12184c51d4",
+          code: "cs",
+          description: "Common Stock",
+          is_supported: true,
+        },
+        raw_symbol: "O",
+        logo_url:
+          "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/O.png",
+        figi_code: "BBG000DHPPZ6",
+        figi_instrument: {
+          figi_code: "BBG000DHPPZ6",
+          figi_share_class: "BBG001S884K0",
+        },
+      },
+      id: "5acec406-3c17-47cb-a6aa-69a10491a3e9",
+      description: "",
+      local_id: "",
+      security_type: {},
+      listing_exchange: {},
+      is_quotable: true,
+      is_tradable: true,
+    },
+    price: 56.37,
+    open_pnl: 3.41,
+    fractional_units: null,
+    currency: {
+      code: "USD",
+      name: "US Dollar",
+      id: "57f81c53-bdda-45a7-a51f-032afd1ae41b",
+    },
+    units: 1,
+    average_purchase_price: 52.9599,
+  },
+];
+
+export default mockPositions;
