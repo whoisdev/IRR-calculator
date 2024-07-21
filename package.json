@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
     "test": "jest",
-    "start": "node ./out/index.js",
-    "watch": "tsc --watch & nodemon ./out/index.js"
+    "start": "node ./lib/index.js",
+    "watch": "tsc --watch & nodemon ./lib/index.js",
+    "build": "tsc --project tsconfig.json",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",

@@ -1,14 +1,33 @@
 {
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules/**"],
   "compilerOptions": {
-    "target": "ES2020",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "jsx": "preserve",
+    "lib": ["es6", "es7", "esnext", "dom"],
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "target": "es2017",
     "module": "commonjs",
-    "outDir": "./out",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "noEmit": false,
+    "declaration": true,
+    "noUnusedLocals": true,
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "pretty": true,
+    "removeComments": false,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "strict": false,
+    "outDir": "lib"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["test/**/*.ts", "node_modules/", ".next/"]
 }
