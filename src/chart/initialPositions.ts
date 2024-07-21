@@ -20,12 +20,12 @@ export const getCurrentPositions = (positions: Position[]) => {
     if (positionMap[symbol]) {
       positionMap[symbol] = {
         shares: positionMap[symbol].shares + shares,
-        currency: position.currency,
+        currency: position?.currency?.code || "USD",
       };
     } else {
       positionMap[symbol] = {
         shares,
-        currency: position.currency,
+        currency: position?.currency?.code || "USD",
       };
     }
   });
@@ -74,7 +74,10 @@ const getPositionsOnStartDate = (
   const positionsOnStartDate: PositionsMap = {};
 
   relevantSymbols.forEach((symbol) => {
-    const currentUnits = currentPositions[symbol];
+    const currentUnits = currentPositions[symbol] || {
+      shares: 0,
+      currency: "USD",
+    };
     const transactionUnits = positionTransactions[symbol]?.shares || 0;
     positionsOnStartDate[symbol] = {
       shares: currentUnits.shares - transactionUnits,

@@ -36,6 +36,7 @@ const getPositionHistory = (
     relevantTransactions,
     currentPositions
   );
+
   const transactionMap = groupedTransactions(relevantTransactions);
   const positionHistory: PositionHistory[] = [];
 
