@@ -1,5 +1,4 @@
 import dayjs from "dayjs";
-import _, { uniq } from "lodash";
 import { Position, UniversalActivity } from "snaptrade-typescript-sdk";
 import utc from "dayjs/plugin/utc";
 
@@ -11,7 +10,12 @@ export const getCurrentPositions = (positions: Position[]) => {
   positions.forEach((position) => {
     const symbol = position.symbol?.symbol?.symbol || "";
     const shares = position.units || 0;
-    positionMap[symbol] = shares;
+
+    if (positionMap[symbol]) {
+      positionMap[symbol] += shares;
+    } else {
+      positionMap[symbol] = shares;
+    }
   });
 
   return positionMap;
@@ -44,10 +48,10 @@ const getPositionsOnStartDate = (
     }
   });
 
-  const relevantSymbols = uniq([
+  const relevantSymbols = [
     ...Object.keys(positionTransactions),
     ...Object.keys(currentPositions),
-  ]);
+  ];
 
   const positionsOnStartDate: Record<string, number> = {};
 

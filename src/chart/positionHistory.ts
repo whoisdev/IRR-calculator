@@ -53,7 +53,10 @@ const getPositionHistory = (
         const symbol = transaction.symbol?.symbol || "";
         const units = transaction.units;
         if (transaction.type === "BUY" || transaction.type === "SELL") {
-          positions[symbol] = (positions[symbol] || 0) + (units || 0);
+          positions[symbol] = Math.max(
+            (positions[symbol] || 0) + (units || 0),
+            0
+          );
         }
       });
     }
