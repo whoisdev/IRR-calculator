@@ -53,10 +53,10 @@ const getPositionHistory = (
         const symbol = transaction.symbol?.symbol || "";
         const units = transaction.units;
         if (transaction.type === "BUY" || transaction.type === "SELL") {
-          positions[symbol] = Math.max(
-            (positions[symbol] || 0) + (units || 0),
-            0
-          );
+          positions[symbol] = {
+            shares: Math.max((positions[symbol].shares || 0) + (units || 0), 0),
+            currency: positions[symbol]?.currency || "USD",
+          };
         }
       });
     }
@@ -64,10 +64,9 @@ const getPositionHistory = (
     // If it's the first day, use the initial positions
     const stocks = Object.entries(
       dayjs(date).isSame(startDate) ? initialPositions : positions
-    ).map(([symbol, shares]) => ({
+    ).map(([symbol, info]) => ({
       symbol,
-      shares,
-      currency: "USD", // Assuming all transactions are in USD
+      ...info,
     }));
 
     positionHistory.push({

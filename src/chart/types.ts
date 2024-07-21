@@ -1,5 +1,10 @@
-export type InitialPositions = Record<string, number>;
-export type CurrentPositions = Record<string, number>;
+export type PositionsMap = Record<
+  string,
+  {
+    shares: number;
+    currency: string;
+  }
+>;
 
 export type PositionHistoryStock = {
   symbol: string;
